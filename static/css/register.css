@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/background.jpg");
+}
+
+#register-form, #msg-hint{
+    width: 40%;
+    padding: 1%;
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    left: 30%;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+
+#register-form{
+    height: 38%;
+    border: 1px solid gray;
+    top:32%;
+    border-radius: 20px;
+}
+
+#register-form h1{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+#register-form table{
+    margin: auto;
+}
+
+#register-form table tr{
+    height: 30px;
+}
+
+#register-form table td{
+    text-align: right;
+}
+
+#register-form button{
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #0d31a3;
+    border-radius: 10px;
+    color: #0d31a3;
+    font-size: 15px;
+}
+
+#register-form button:hover{
+    background-color: #0d31a3;
+    color: white;
+}
+
+#register-form a{
+    font-size: 10px;
+    color: gray;
+}
+
+@keyframes show_msg {
+    from {opacity: 0; top: 23%;}
+    to {opacity: 1; top: 25%;}
+}
+
+#msg-hint{
+    height: 3%;
+    border: 1px solid #0d31a3;
+    border-radius: 10px;
+    color: #0d31a3;
+    top: 25%;
+    font-size: 20px;
+    font-weight: bolder;
+    opacity: 1;
+    animation: show_msg 1s;
+}

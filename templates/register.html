@@ -1,0 +1,60 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="{% static 'css/register.css' %}" rel="stylesheet">
+{#    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>#}
+    <script src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+    <script src="{% static 'js/md5.min.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+</head>
+<body>
+{#<div id="msg-hint">#}
+{#    hhh#}
+{#</div>#}
+<div id="register-form">
+    <h1>Register Now</h1>
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <label for="usr-nm">Username</label>
+            </td>
+            <td>
+                <input id="usr-nm" type="text" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="eml">Email</label>
+            </td>
+            <td>
+                <input id="eml" type="email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="ps-wd">Password</label>
+            </td>
+            <td>
+                <input id="ps-wd" type="password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="cfm">Confirm</label>
+            </td>
+            <td>
+                <input id="cfm" type="password" >
+            </td>
+        </tr>
+    </table>
+    <button id="register-btn">Register</button>
+    <br>
+    <a href="{% url 'login' %}">login</a>
+</div>
+</body>
+</html>

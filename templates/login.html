@@ -1,0 +1,44 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{#    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>#}
+    <script src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+    <script src="{% static 'js/md5.min.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+</head>
+<body>
+{#<div id="msg-hint">#}
+{#    frefrg#}
+{#</div>#}
+<div id="login-form">
+    {% csrf_token %}
+    <h1>Please Log In</h1>
+    <table>
+        <tr>
+            <td>
+                <label for="usr-nm">Username</label>
+            </td>
+            <td>
+                <input id="usr-nm" type="text" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="ps-wd">Password</label>
+            </td>
+            <td>
+                <input id="ps-wd" type="password" >
+            </td>
+        </tr>
+    </table>
+    <button id="login-btn">Login</button>
+    <br>
+    <a href="{% url 'register' %}">register</a>
+</div>
+</body>
+</html>

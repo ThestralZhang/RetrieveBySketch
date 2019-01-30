@@ -1,0 +1,51 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Like</title>
+    <link href="{% static 'css/my_like.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+    <script src="{% static 'js/my_like.js' %}"></script>
+</head>
+<body>
+
+<div id="modal-overlay1" class="modal-overlay">
+    <div class="modal-data" id="detail-modal">
+        <div class="box">
+            <span><img src="#"></span>
+        </div>
+        <div class="info">
+            <a>Close</a>
+            <input type="checkbox">
+        </div>
+    </div>
+</div>
+
+<header>
+    <a id="back-btn" href="{% url 'home' %}"><img src="{% static 'image/back.png' %}"></a>
+    <a href="#top"><img src="{% static 'image/back_to_top.png' %}"></a>
+{#    <h3>My Like</h3>#}
+</header>
+<a id="top"></a>
+
+
+
+<div class="column"></div>
+<div class="column"></div>
+<div class="column"></div>
+<div class="column"></div>
+<div class="column">
+{#        <div class="frame">#}
+{#            <img src="/media/12.jpg">#}
+{#            <div class="info">#}
+{#                <a>by admin</a>#}
+{#                <input type="checkbox">#}
+{#            </div>#}
+{#        </div>#}
+    </div>
+
+</body>
+</html>

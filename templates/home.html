@@ -1,0 +1,145 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sketch Retrieve</title>
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+</head>
+<body>
+
+<div id="modal-overlay1" class="modal-overlay">
+    <div class="modal-data" id="draw-modal">
+        <p>Draw to Retrieve</p>
+        <canvas id="draw-pad" width="800px" height="600px"></canvas>
+        <div id="eraser"></div>
+        <div id="tool-box">
+            <a id="clear-btn"><img src="{% static 'image/clear.png' %}"></a>
+            <a id="draw-btn"><img src="{% static 'image/pen.png' %}"></a>
+            <a id="erase-btn"><img src="{% static 'image/u_eraser.png' %}"></a>
+            <a id="larger-btn"><img src="{%  static 'image/larger.png' %}"></a>
+            <a id="smaller-btn"><img src="{% static 'image/smaller.png' %}"></a>
+            <a id="close-btn">Cancel</a>
+            <a id="retrieve-btn">Done</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-overlay2" class="modal-overlay">
+    <div class="modal-data" id="upload-modal">
+        <p>Upload</p>
+        <div id="preview">
+{#            The preview will be shown here.#}
+            <span>The preview will be shown here.</span>
+        </div>
+        <div id="up-form">
+            <form enctype="multipart/form-data" method="POST" action="">
+            <table>
+                <tr>
+                    <td>
+                        <a href="" id="a-upload">
+                            <input type="file" id="up-img" name="up-img"  />
+                            Click to choose
+                        </a>
+                    </td>
+                    <td>
+                        <span id="file-name">file name</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tag1">Tag1</label>
+                    </td>
+                    <td>
+                        <input id="tag1" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tag2">Tag2</label>
+                    </td>
+                    <td>
+                        <input id="tag2" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tag3">Tag3</label>
+                    </td>
+                    <td>
+                        <input id="tag3" type="text">
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" id="sub-btn">Done</button>
+            </form>
+            <a id="ccl-btn">Cancel</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-overlay3" class="modal-overlay">
+    <div class="modal-data" id="detail-modal">
+        <div class="box">
+            <span><img src="#"></span>
+        </div>
+        <div class="info">
+            <a>Close</a>
+            <input type="checkbox">
+        </div>
+    </div>
+</div>
+
+<header>
+    <a id="open-btn"><img src="{% static 'image/draw.png' %}"></a>
+    <a id="up-btn"><img src="{% static 'image/upload.png' %}"></a>
+    <a href="#top"><img src="{% static 'image/back_to_top.png' %}"></a>
+    <ul id="menu">
+        <a id="user-btn">{{ user_name }}</a>
+        <li>
+            <a href="{% url 'my_like' %}">My Likes</a>
+        </li>
+        <li>
+            <a href="{% url 'my_up' %}">My Uploads</a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}">Log out</a>
+        </li>
+    </ul>
+</header>
+
+<a id="top"></a>
+
+<div id="candidates">
+</div>
+
+<div id="img-area">
+    <div class="column">
+    </div>
+
+    <div class="column">
+    </div>
+
+    <div class="column">
+    </div>
+
+    <div class="column">
+    </div>
+
+    <div class="column">
+    </div>
+
+</div>
+
+
+
+<button id="ld-mr-btn">Load More</button>
+
+<div id="no-more">Sorry, no more images</div>
+
+</body>
+</html>

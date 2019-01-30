@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<form enctype="multipart/form-data" method="POST" action="">
+            {% csrf_token %}
+            {{ form.title }}
+            {{ form.img }}
+            {{ form.tag1 }}
+            {{ form.tag2 }}
+            {{ form.tag3 }}
+            <input type="submit" value="upload" />
+        </form>
+{% else %}
+Please login!
+<a href="{% url 'login' %}">login</a>
+{% endif %}
+</body>
+</html>
